@@ -8,8 +8,8 @@ const tryToCatch = require('try-to-catch');
 
 const catchHandler = require('../lib/catch-handler');
 const echo = require('../lib/echo');
-const middleware = require('../lib/middleware');
 const redis = require('../lib/redis');
+const middleware = require('../lib/middleware');
 
 const {log} = console;
 const {REDIS_URL} = process.env;
@@ -35,9 +35,8 @@ async function main() {
     
     const allTimes = await redis.getAll(redisClient);
     
-    for (const [time, message] of allTimes) {
+    for (const [time, message] of allTimes)
         await doEcho(time, message);
-    }
 }
 
 process.on('unhandledRejection', (error) => {
