@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "bin": {
-    "echo-at-time": "echo-at-time.js"
+    "echo-at-time": "bin/echo-at-time.js"
   },
   "devDependencies": {
     "eslint-plugin-node": "^9.2.0",
@@ -24,8 +24,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "async-redis": "^1.1.7",
     "pullout": "^3.0.0",
-    "try-to-catch": "^1.1.1",
-    "wraptile": "^2.0.0"
+    "try-to-catch": "^1.1.1"
+  },
+  "engines": {
+    "node": ">=8.3.0"
   }
 }
