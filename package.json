@@ -7,9 +7,18 @@
   "bin": {
     "echo-at-time": "echo-at-time.js"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint-plugin-node": "^9.2.0",
+    "eslint-plugin-putout": "^2.0.0",
+    "madrun": "^3.0.1",
+    "putout": "^5.11.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "madrun test",
+    "lint": "madrun lint",
+    "fix:lint": "madrun fix:lint",
+    "putout": "madrun putout",
+    "coverage": "madrun coverage"
   },
   "keywords": [],
   "author": "",
