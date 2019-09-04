@@ -4,8 +4,6 @@
 
 const http = require('http');
 
-const tryToCatch = require('try-to-catch');
-
 const catchHandler = require('../lib/catch-handler');
 const echo = require('../lib/echo');
 const redis = require('../lib/redis');
@@ -23,7 +21,7 @@ async function main() {
     const redisClient = redis.create(REDIS_URL);
     
     const remove = redis.remove(redisClient);
-    const add = redis.add(redisClient)
+    const add = redis.add(redisClient);
     
     const doEcho = echo(onEcho, {
         remove,
