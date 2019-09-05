@@ -30,9 +30,15 @@ async function main() {
         remove,
     });
     
-    http
-        .createServer(catchHandler(middleware, {add, doEcho}))
-        .listen(PORT);
+    http.createServer(catchHandler({
+        middleware,
+        runners: {
+            add,
+            doEcho,
+        },
+    }))
+    
+    http.listen(PORT);
     
     log(`server started at: http://localhost:${PORT}`);
     const allTimes = await redis.getAll(redisClient);
