@@ -14,10 +14,10 @@
     "putout": "^5.11.1"
   },
   "scripts": {
+    "start": "madrun start",
     "test": "madrun test",
     "lint": "madrun lint",
     "fix:lint": "madrun fix:lint",
-    "putout": "madrun putout",
     "coverage": "madrun coverage"
   },
   "keywords": [],
@@ -25,6 +25,7 @@
   "license": "ISC",
   "dependencies": {
     "async-redis": "^1.1.7",
+    "flat": "^4.1.0",
     "pullout": "^3.0.0",
     "try-to-catch": "^1.1.1"
   },

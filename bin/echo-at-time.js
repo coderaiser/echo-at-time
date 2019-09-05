@@ -5,14 +5,17 @@
 const http = require('http');
 
 const catchHandler = require('../lib/catch-handler');
-const echo = require('../lib/echo');
+const timeout = require('../lib/timeout');
 const redis = require('../lib/redis');
 const middleware = require('../lib/middleware');
+const {detach} = require('../lib/uniq');
 
 const {log} = console;
-const {REDIS_URL} = process.env;
+const {PORT = 3000, REDIS_URL} = process.env;
 
-const onEcho = (time, message) => log(time, message);
+const onEcho = (time, message) => {
+    log(detach(time), message);
+};
 
 main()
     .catch(console.error);
@@ -23,14 +26,15 @@ async function main() {
     const remove = redis.remove(redisClient);
     const add = redis.add(redisClient);
     
-    const doEcho = echo(onEcho, {
+    const doEcho = timeout(onEcho, {
         remove,
     });
     
     http
         .createServer(catchHandler(middleware, {add, doEcho}))
-        .listen(3000);
+        .listen(PORT);
     
+    log(`server started at: http://localhost:${PORT}`);
     const allTimes = await redis.getAll(redisClient);
     
     for (const [time, message] of allTimes)
