@@ -36,7 +36,7 @@ async function main() {
             add,
             doEcho,
         },
-    }))
+    }));
     
     server.listen(PORT);
     
