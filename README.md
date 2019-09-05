@@ -22,7 +22,7 @@ REDIS_URL=redis://localhost:6379 PORT=3000 npm start
 Send time in ISO format (`new Date().toISOString()`) and message in `json` format:
 
 ```
-curl localhost:3000/echoAtTime -X POST -d '{"time": "2019-09-04T20:07:33.455Z", "messag: "hello worlds"}'
+curl localhost:3000/echoAtTime -X POST -d '{"time": "2019-09-04T20:07:33.455Z", "message": "hello worlds"}'
 ```
 
 ## Decisions
