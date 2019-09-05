@@ -8,23 +8,38 @@
     "echo-at-time": "bin/echo-at-time.js"
   },
   "devDependencies": {
+    "@cloudcmd/stub": "^2.3.2",
+    "eslint": "^6.3.0",
     "eslint-plugin-node": "^9.2.0",
     "eslint-plugin-putout": "^2.0.0",
     "madrun": "^3.0.1",
-    "putout": "^5.11.1"
+    "mock-require": "^3.0.3",
+    "nodemon": "^1.19.2",
+    "nyc": "^14.1.1",
+    "putout": "^5.11.1",
+    "serve-once": "^1.6.0",
+    "supertape": "^1.2.3"
   },
   "scripts": {
     "start": "madrun start",
     "test": "madrun test",
+    "watch:test": "madrun watch:test",
     "lint": "madrun lint",
     "fix:lint": "madrun fix:lint",
     "coverage": "madrun coverage"
+  },
+  "nyc": {
+    "exclude": [
+      "*/**/*.spec.js",
+      ".*"
+    ]
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "async-redis": "^1.1.7",
+    "currify": "^3.0.0",
     "flat": "^4.1.0",
     "pullout": "^3.0.0",
     "try-to-catch": "^1.1.1"
