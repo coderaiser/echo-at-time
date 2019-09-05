@@ -1,4 +1,7 @@
-# Echo At Time
+# Echo At Time [![Build Status][BuildStatusIMGURL]][BuildStatusURL]
+
+[BuildStatusURL]:           https://travis-ci.org/coderaiser/echo-at-time "Build Status"
+[BuildStatusIMGURL]:        https://img.shields.io/travis/coderaiser/echo-at-time.svg?style=flat-squere&longCache=true
 
 `/echoAtTime` - receives two parameters, time and message, and writes that message to the server console at the given time.
 
